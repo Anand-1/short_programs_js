@@ -40,8 +40,7 @@ const newArr = myArr.flat();
 console.log(newArr);
 
 // splice() method adds new items to an array
-// First parameter defines the position where new elements
-// should be added
+// First parameter defines the position where new elements should be added
 // Second parameter defines how many elements needs to be removed
 let newArray = myArray.splice(2, 0, "Lemon", "Kiwi");
 console.log(myArray);
@@ -54,14 +53,4 @@ points.sort(function (a, b) {
   return a - b;
 });
 console.log(points);
-console.log();
-console.log();
-console.log();
 // slice() method slices out a piece of an array
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();
-console.log();

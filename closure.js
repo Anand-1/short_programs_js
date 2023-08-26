@@ -13,6 +13,7 @@ console.log("Closure Loaded");
   - setTimeout
   - maintain the scope
  */
+
 // Example 1:
 function init() {
   var name = "Mozilla"; // name is a local variable created by init
@@ -31,10 +32,10 @@ function myName() {
   function printMyName() {
     console.log(num);
   }
-  num++;
+  num = 100;
   return printMyName;
 }
 
 var print = myName();
 console.log(print); // it will print the function
-console.log(print()); // It will print the value 2
+print(); // It will print the value 100 as reference to num exists

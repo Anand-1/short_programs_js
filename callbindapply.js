@@ -1,13 +1,9 @@
-/*Call and apply immediately calls a function 
-while bind creates a new function. Aruguments are
+/*
+Call and apply immediately calls a function ,aruguments are
 individually passed in call while apply expects an array.
+while bind creates a new function.
 */
-function printFullname(home) {
-  this.home = home;
-  console.log(
-    ` ${this.firstName}` + " " + `${this.lastName}` + " from  " + `${this.home}`
-  );
-}
+
 var myName = {
   firstName: "Anand",
   lastName: "Raj",
@@ -17,6 +13,14 @@ var homename = {
   firstName: "Rahul",
   lastName: "Singh",
 };
+
+function printFullname(home) {
+  this.home = home;
+  console.log(
+    ` ${this.firstName}` + " " + `${this.lastName}` + " from  " + `${this.home}`
+  );
+}
+
 //function borrowing
 printFullname.call(homename);
 printFullname.call(myName);
