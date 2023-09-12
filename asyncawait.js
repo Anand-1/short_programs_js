@@ -15,7 +15,7 @@ let promise = new Promise((resolve, reject) => {
 async function asyncFunc() {
   // wait until the promise resolves
   let result = await promise;
-  console.log(result);
+  console.log(result + " in await");
 }
 
 // calling the async function
