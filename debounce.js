@@ -1,21 +1,25 @@
 //debounce example
-
+// Once we pause , action will be performed
 var count = 0;
 var calldebounce = (e) => {
-  console.log("Key Stroke  " + count++);
+  console.log("Key up  " + count++);
 };
 
 function debounce(call, delay) {
+  // local timer initialization
   let timer;
-  return function (...args) {
+  return function (...arg) {
+    // reset action , if next action is performed
     clearTimeout(timer);
+    //timer given value
     timer = setTimeout(() => {
       call();
     }, delay);
   };
 }
 
-var betterfunction = debounce(calldebounce, 1000);
+// Action performeed after some time
+const betterfunction = debounce(calldebounce, 1000);
 
-var myVal = document.getElementById("debounce");
-myVal.addEventListener("keyup", betterfunction, false);
+const getElemetFunction = document.getElementById("debounce");
+getElemetFunction.addEventListener("keyup", betterfunction, false);

@@ -31,8 +31,8 @@ printFullname.call(homename, "Samastipur");
 printFullname.call(myName, "kolkata");
 
 // while using apply [] is used for additional parameters
-printFullname.call(homename, ["Samastipur"]);
-printFullname.call(myName, ["kolkata"]);
+printFullname.apply(homename, ["Samastipur"]);
+printFullname.apply(myName, ["kolkata"]);
 
 /* Bind will make a copy of function and will return it rather than
 immediately invoking it */
