@@ -1,6 +1,6 @@
 //flattening nested array
 
-let ary = [1, 2, 3, [4, [5, 5], 9], [10]];
+let ary = [1, 2, 3, [4, [5, 5], [4], 9], [10]];
 
 let dataNew = function flatten(ary) {
   var ret = [];
@@ -10,9 +10,11 @@ let dataNew = function flatten(ary) {
     if (Array.isArray(ary[i])) {
       // If array they are concatenated to array
       ret = ret.concat(flatten(ary[i]));
+      console.log(ret);
     } else {
       // if normal elements pushed to result
       ret.push(ary[i]);
+      console.log(ret);
     }
   }
   return ret;

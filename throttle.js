@@ -1,24 +1,28 @@
 //throttle example
 
-function throttle(call, delay) {
+function throttle(enable, delay) {
   return function (...args) {
-    enableButton();
+    disableButton();
     setTimeout(() => {
-      call();
+      enable();
     }, delay);
   };
 }
 
-function disableButton() {
-  document.getElementById("btn").disabled = false;
-}
 function enableButton() {
+  console.log("button enabled");
+  document.getElementById("btn").disabled = false;
+  document.getElementById("btn").style.color = "blue";
+}
+function disableButton() {
+  console.log("button disabled");
   document.getElementById("btn").disabled = true;
+  document.getElementById("btn").style.color = "red";
 }
 //throttle is called with delay,making it enabled
-const newFun = throttle(disableButton, 1000);
 
 // Get the Element
 var myVal = document.getElementById("btn");
+
 // 2. EventListener added and click function called
-myVal.addEventListener("click", newFun);
+myVal.addEventListener("click", throttle(enableButton, 1000));

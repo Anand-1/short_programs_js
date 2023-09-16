@@ -38,10 +38,11 @@ function studentAddress(address) {
     data,
     country: "India",
   };
-  console.log(`${newStudentAddress.city}`);
-  console.log(`${newStudentAddress.state}`);
-  console.log(`${newStudentAddress.data}`);
-  console.log(`${newStudentAddress.country}`);
+  console.log(
+    `${newStudentAddress.city} ` +
+      `${newStudentAddress.state} ` +
+      `${newStudentAddress.country}`
+  );
 }
 
 studentAddress({ city: "Samastipur", state: "Bihar", data: function () {} });

@@ -1,7 +1,7 @@
 greeting();
 
 var greeting = function () {
-  console.log("Hi Anand");
+  console.log("Hi Anand 1");
 };
 
 greeting();
