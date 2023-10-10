@@ -13,8 +13,8 @@ let dataNew = function flatten(ary) {
       console.log(ret);
     } else {
       // if normal elements pushed to result
+      console.log(ary[i]);
       ret.push(ary[i]);
-      console.log(ret);
     }
   }
   return ret;

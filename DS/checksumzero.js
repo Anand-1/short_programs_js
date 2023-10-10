@@ -9,12 +9,14 @@ function getSumZero(arr) {
   });
   console.log(arr);
   for (let n of arr) {
-    for (let m = 1; m < n; m++) {
+    console.log(n);
+    for (let m = 0; m < n; m++) {
+      console.log(n, arr[m]);
       if (n + arr[m] == 0) {
         console.log("found");
+        console.log(n, arr[m]);
         return [n, arr[m]];
       }
-      console.log(arr[n], arr[m]);
     }
   }
 }

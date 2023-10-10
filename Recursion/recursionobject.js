@@ -43,5 +43,4 @@ function recur(data) {
   }
 }
 
-let newData = recur(data);
-console.log(newData);
+console.log(recur(data));
