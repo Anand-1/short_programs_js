@@ -1,24 +1,22 @@
 // Checking sum zero - Problem 1
-// [-5, -4,-3,-2,-1,0, 2,4,6,8] >>> [-4,4]
+// [-5, -4, -2, -1, 6, 8, 4] >>> [-4,4]
 
-let data = [-5, -4, -3, -2, -1, 0, 2, 4, 6, 8];
+let data = [-5, -2, -1, 6, 8, 4];
 
-function getSumZero(arr) {
-  arr = arr.sort(function (a, b) {
+function getSumZero(data) {
+  let newdata = data.sort((a, b) => {
     return a - b;
   });
-  console.log(arr);
-  for (let n of arr) {
-    console.log(n);
-    for (let m = 0; m < n; m++) {
-      console.log(n, arr[m]);
-      if (n + arr[m] == 0) {
+  for (let n = 0; n < newdata.length - 1; n++) {
+    for (let m = 1; m < newdata.length; m++) {
+      if (newdata[n] + newdata[m] == 0) {
         console.log("found");
-        console.log(n, arr[m]);
-        return [n, arr[m]];
+        console.log(newdata[n], newdata[m]);
+        return [newdata[n], newdata[m]];
       }
     }
   }
+  return "not found";
 }
 
 console.log(getSumZero(data));
@@ -32,17 +30,17 @@ function getSumZeroNew(arr) {
   let left = 0;
   let right = arr.length - 1;
   while (left < right) {
-    sum = arr[left] + arr[right];
+    let sum = arr[left] + arr[right];
     if (sum === 0) {
       return [arr[left], arr[right]];
     } else if (sum > 0) {
       right--;
     } else if (sum < 0) {
       left++;
+    } else {
+      return "Not Found !";
     }
   }
 }
 
 console.log(getSumZeroNew(data));
-
-// O (n)

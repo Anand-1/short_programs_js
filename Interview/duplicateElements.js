@@ -8,7 +8,7 @@ function findDup(dataArray) {
   );
 }
 
-console.log(findDup(dataArray));
+// console.log(findDup(dataArray));
 
 function duplicateLetter(data) {
   var arr = data.toUpperCase().split("");
@@ -17,6 +17,7 @@ function duplicateLetter(data) {
     obj[arr[v]] = obj[arr[v]] || 0;
     obj[arr[v]]++;
   }
+  console.log(obj);
   for (var v in obj) {
     console.log(data + ", the letter '" + v + "' => " + obj[v] + " times.");
   }
@@ -33,6 +34,7 @@ function duplicateLetterCheck(o) {
     pos = letters.indexOf(arr[v]);
     if (pos < 0) continue; // It wasn't a letter.
     count[pos] = count[pos] || 0;
+    console.log(count[pos]);
     count[pos]++;
   }
 
