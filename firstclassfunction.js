@@ -19,7 +19,7 @@ var b = function () {
   console.log("Function Expresssion!");
 };
 
-// anonymous function , it will thro error name is needed
+// anonymous function , it will throw error name is needed
 // function(){
 //     console.log("anonymous function !")
 // }

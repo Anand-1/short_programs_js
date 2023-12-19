@@ -12,15 +12,15 @@ console.log("Closure Loaded");
   - memoize
   - setTimeout
   - maintain the scope
- */
-
+*/
 // Example 1:
 function init() {
   var name = "Mozilla";
   // name is a local variable created by init
   function displayName() {
     // displayName() is the inner function, that forms the closure
-    console.log(name); // use variable declared in the parent function
+    console.log(name);
+    // use variable declared in the parent function
   }
   displayName();
 }
@@ -40,3 +40,16 @@ function myName() {
 var print = myName();
 console.log(print); // it will print the function
 print(); // It will print the value 100 as reference to num exists
+
+function numberGenerator() {
+  // Local “free” variable that ends up within the closure
+  var num = 1;
+  function checkNumber() {
+    console.log(num);
+  }
+  num++;
+  return checkNumber;
+}
+
+var numbera = numberGenerator();
+numbera(); // 2

@@ -1,7 +1,8 @@
 // Function in javascript is a block of code for specific task
 /* Callback:
-  A callback function, also known as a higher-order function, is a function that is passed 
-  to another function (let’s call this other function “otherFunction”) as a parameter,
+  A callback function, also known as a higher-order function, 
+  is a function that is passed to another function (let’s call
+  this other function “otherFunction”) as a parameter,
   and the callback function is called (or executed) inside the otherFunction. 
 */
 

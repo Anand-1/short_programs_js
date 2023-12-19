@@ -14,6 +14,7 @@ const employee = {
     designation: "I am software Developer",
   },
 };
+
 const {
   fname,
   age,
@@ -41,7 +42,8 @@ function studentAddress(address) {
   console.log(
     `${newStudentAddress.city} ` +
       `${newStudentAddress.state} ` +
-      `${newStudentAddress.country}`
+      `${newStudentAddress.country}` +
+      `${newStudentAddress.data}`
   );
 }
 

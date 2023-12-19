@@ -1,5 +1,7 @@
 //class implementation
-
+const y = class {};
+console.log(Object.getPrototypeOf(y));
+console.log("////////////////////////////////////////////////");
 class IB {
   name;
   constructor(message) {
@@ -9,7 +11,6 @@ class IB {
     return "Hello, " + this.name + "How are you";
   }
 }
-
 class RailwayForm {
   constructor(givenName) {
     console.log("Constructor Called !");
