@@ -17,9 +17,11 @@ function Person() {
   };
 }
 // Create a object
+console.log(typeof Person); // function
 const personObject = new Person();
 console.log(personObject);
 console.log(personObject.greet());
+
 //================================Clasess===============
 /* Note: The Constructor() method inside a class is called 
    automatically each time an object is created.
@@ -29,7 +31,6 @@ class NewPerson {
   constructor(name) {
     this.name = name;
   }
-  // defining method
   greet() {
     console.log(`Hello ${this.name}`);
   }
@@ -46,7 +47,7 @@ console.log(personClass.greet()); // Hello John
 
 // ==================Getters and setters ==============
 /* In Javascript, getter method get the value of an object
-   and setter method gets the value of object.
+   and setter method sets the value of object.
 */
 class Animal {
   constructor(name) {
@@ -55,7 +56,7 @@ class Animal {
   get animalName() {
     return this.name;
   }
-  set animalName(x) {
+  set SetanimalName(x) {
     this.animalName = x;
   }
 }
@@ -63,5 +64,5 @@ class Animal {
 let newAnimal = new Animal("Dog");
 
 console.log(newAnimal.animalName);
-newAnimal.animalName("Cat");
+newAnimal.SetanimalName("Cat");
 console.log(newAnimal.animalName);

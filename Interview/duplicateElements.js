@@ -1,29 +1,19 @@
-var dataArray = [-1, -3, 1, 3, 3, 6, 9];
+var dataArray = [-1, -3, 1, 3, 6, 999, 999];
 
+/*
+The indexOf() method returns the position of the first 
+occurrence of a value in a string. 
+The indexOf() method returns -1 if the value is not found.
+*/
 function findDup(dataArray) {
   let sortArr = dataArray.sort((a, b) => a - b);
-  return sortArr.filter(
-    (currentValue, currentIndex) =>
-      sortArr.indexOf(currentValue) !== currentIndex
-  );
+  return sortArr.filter((currentValue, currentIndex) => {
+    console.log(sortArr.indexOf(currentValue) + "--" + currentIndex);
+    return sortArr.indexOf(currentValue) !== currentIndex;
+  });
 }
 
 // console.log(findDup(dataArray));
-
-function duplicateLetter(data) {
-  var arr = data.toUpperCase().split("");
-  var obj = {};
-  for (var v in arr) {
-    obj[arr[v]] = obj[arr[v]] || 0;
-    obj[arr[v]]++;
-  }
-  console.log(obj);
-  for (var v in obj) {
-    console.log(data + ", the letter '" + v + "' => " + obj[v] + " times.");
-  }
-}
-
-duplicateLetter("Captain America");
 
 // Not using objects and not counting anything but letters.
 function duplicateLetterCheck(o) {
@@ -46,4 +36,74 @@ function duplicateLetterCheck(o) {
   }
 }
 
-duplicateLetterCheck("Captain America");
+duplicateLetterCheck("Caca");
+
+function printDups(str) {
+  let charCount = {};
+
+  for (let i = 0; i < str.length; i++) {
+    let character = str[i];
+    console.log(character);
+    charCount[character] = (charCount[character] || 0) + 1;
+    console.log(charCount[character]);
+  }
+  console.log(charCount);
+
+  for (let char in charCount) {
+    if (charCount[char] > 1) {
+      console.log(char + ", count = " + charCount[char]);
+    }
+  }
+}
+
+let str = "caca";
+printDups(str);
+
+function printDuplicates(str) {
+  let len = str.length;
+
+  // Sorting the string
+  str = str.split("").sort().join("");
+
+  // Loop through the sorted string to find duplicates
+  for (let i = 0; i < len; i++) {
+    let count = 1;
+
+    // Counting the occurrences of each character
+    while (i < len - 1 && str[i] == str[i + 1]) {
+      count++;
+      i++;
+    }
+
+    // Printing the duplicate character and its count
+    if (count > 1) {
+      console.log(str[i] + ", count = " + count);
+    }
+  }
+}
+
+printDuplicates(str);
+
+// JavaScript program to count all duplicates
+// from string using maps
+function printDups(str) {
+  let count = new Map();
+  for (let i = 0; i < str.length; i++) {
+    if (count.has(str[i])) {
+      count.set(str[i], count.get(str[i]) + 1);
+    } else {
+      count.set(str[i], 1);
+    }
+    //increase the count of characters by 1
+  }
+  //iterating through the unordered map
+  for (let [it, it2] of count) {
+    if (it2 > 1)
+      //if the count of characters is
+      //greater than 1 then duplicate found
+      console.log(it, ", count = ", it2);
+  }
+}
+/* Driver code*/
+
+printDups(str);

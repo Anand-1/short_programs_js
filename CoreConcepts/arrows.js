@@ -1,6 +1,6 @@
 /* Arrows are the concise way of writing function statements 
    - Concise syntax 
-     - if only one statement in functio body, return keyword and 
+     - if only one statement in function body, return keyword and 
        curly braces are not needed 
      - no funntion keyword is needed while defining it 
    - Arrow functions do not have thier own "this" context; Instead 
