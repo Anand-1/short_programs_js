@@ -5,15 +5,22 @@ The indexOf() method returns the position of the first
 occurrence of a value in a string. 
 The indexOf() method returns -1 if the value is not found.
 */
-function findDup(dataArray) {
+function findDupElementNumber(dataArray) {
   let sortArr = dataArray.sort((a, b) => a - b);
-  return sortArr.filter((currentValue, currentIndex) => {
-    console.log(sortArr.indexOf(currentValue) + "--" + currentIndex);
+  return sortArr.filter((currentValue, currentIndex, arr) => {
+    console.log(
+      "Current indexof =" +
+        sortArr.indexOf(currentValue) +
+        "| Current Index =" +
+        currentIndex +
+        " || Array is " +
+        arr
+    );
     return sortArr.indexOf(currentValue) !== currentIndex;
   });
 }
 
-// console.log(findDup(dataArray));
+console.log(findDupElementNumber(dataArray));
 
 // Not using objects and not counting anything but letters.
 function duplicateLetterCheck(o) {
@@ -36,7 +43,7 @@ function duplicateLetterCheck(o) {
   }
 }
 
-duplicateLetterCheck("Caca");
+// duplicateLetterCheck("Caca");
 
 function printDups(str) {
   let charCount = {};
@@ -57,7 +64,8 @@ function printDups(str) {
 }
 
 let str = "caca";
-printDups(str);
+
+// printDups(str);
 
 function printDuplicates(str) {
   let len = str.length;
@@ -82,7 +90,7 @@ function printDuplicates(str) {
   }
 }
 
-printDuplicates(str);
+// printDuplicates(str);
 
 // JavaScript program to count all duplicates
 // from string using maps
@@ -104,6 +112,5 @@ function printDups(str) {
       console.log(it, ", count = ", it2);
   }
 }
-/* Driver code*/
 
-printDups(str);
+// printDups(str);
