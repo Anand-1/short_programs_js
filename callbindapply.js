@@ -1,5 +1,5 @@
 /*
- Call and apply immediately calls a function ,aruguments are
+ Call and apply immediately calls a function,aruguments are
  individually passed in call while apply expects an array.
  while bind creates a new function.
 */

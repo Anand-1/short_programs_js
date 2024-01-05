@@ -3,6 +3,8 @@
 // object type
 
 console.log("Hello prototype");
+
+console.log(Array.prototype);
 function Person(name) {
   this.name = name;
 }

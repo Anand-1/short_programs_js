@@ -1,9 +1,6 @@
 // array is special variable that can hold more than one value
 
 let myArray = ["Anand", "Rahul", "Ajit", "Sumit"];
-
-console.log("<----Array getting used ------>");
-console.log(myArray);
 console.log(`Length of array is "${myArray.length}"`);
 
 // It will convert to comma separated string
@@ -24,7 +21,7 @@ console.log(`shift new element "${myArray.shift()}"`);
 console.log(typeof myArray);
 
 // this will return true , if array
-console.log(Array.isArray(myArray));
+console.log(Array.isArray(myArray) + "<---------------------   Important");
 
 // Join adds possibility of separator when used
 console.log(myArray.join("|"));
