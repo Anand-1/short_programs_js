@@ -1,9 +1,12 @@
-/* JavaScript uses three dots (...) for both the rest and spread operators.
+/* 
+ JavaScript uses three dots (...) for both the rest and spread operators.
  But these two operators are not the same.
 
-The main difference between rest and spread is that the rest operator 
-puts the rest of some specific user-supplied values into a JavaScript array.
-But the spread syntax expands iterables into individual elements.*/
+ The main difference between rest and spread is that the rest operator 
+ puts the rest of some specific user-supplied values into a JavaScript array.
+
+ But the spread syntax expands iterables into individual elements.
+*/
 
 function myBio(firstName, lastName, ...otherInfo) {
   return otherInfo;

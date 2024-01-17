@@ -1,5 +1,4 @@
 var dataArray = [-1, -3, 1, 3, 6, 999, 999];
-
 /*
 The indexOf() method returns the position of the first 
 occurrence of a value in a string. 
@@ -7,15 +6,7 @@ The indexOf() method returns -1 if the value is not found.
 */
 function findDupElementNumber(dataArray) {
   let sortArr = dataArray.sort((a, b) => a - b);
-  return sortArr.filter((currentValue, currentIndex, arr) => {
-    console.log(
-      "Current indexof =" +
-        sortArr.indexOf(currentValue) +
-        "| Current Index =" +
-        currentIndex +
-        " || Array is " +
-        arr
-    );
+  return sortArr.filter((currentValue, currentIndex) => {
     return sortArr.indexOf(currentValue) !== currentIndex;
   });
 }
