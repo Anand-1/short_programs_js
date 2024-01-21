@@ -6,8 +6,9 @@ The indexOf() method returns -1 if the value is not found.
 */
 function findDupElementNumber(dataArray) {
   let sortArr = dataArray.sort((a, b) => a - b);
+  console.log(sortArr);
   return sortArr.filter((currentValue, currentIndex) => {
-    return sortArr.indexOf(currentValue) !== currentIndex;
+    return sortArr.indexOf(currentValue) != currentIndex;
   });
 }
 
