@@ -8,6 +8,7 @@ var calldebounce = (e) => {
 function debounce(call, delay) {
   // local timer initialization
   let timer;
+
   return function (...arg) {
     // reset action , if next action is performed
     clearTimeout(timer);

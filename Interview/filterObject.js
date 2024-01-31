@@ -12,6 +12,7 @@ const userDetails = {
 const userNames = Object.keys(userDetails)
   .filter((key) => key.includes("Name"))
   .reduce((object, key) => {
+    console.log(object, key);
     return Object.assign(object, {
       [key]: userDetails[key],
     });
