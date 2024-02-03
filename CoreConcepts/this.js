@@ -11,29 +11,32 @@ There are generally four kinds of bindings:
  so it is bound to the global scope. As a result, the this.name reference 
 resolves to the global variable const name = 'Kingsley'.
 When set in strict mode, the this reference is set to undefined.
+https://www.freecodecamp.org/news/what-is-this-in-javascript/
  */
-
-function alert() {
-  "strict mode";
+const name = "Anand";
+function firstalert() {
+  // "use strict";
   console.log(this.name + " is calling");
 }
 
-const name = "Kingsley";
-alert(); // Kingsley is calling
+firstalert();
 
-/* According to the binding rule in JavaScript, a function can use 
+/* 
+Implicit Binding: 
+According to the binding rule in JavaScript, a function can use 
 an object as its context only if that object is bound to it at the 
 call site. This form of binding is known as implicit binding.
 Put simply, when you call a function using dot notation, this is implicitly 
-bound to the object the function is being called from. */
+bound to the object the function is being called from.
+*/
 
-function alert() {
+function alertAge() {
   console.log(this.age + " years old");
 }
 
 const myObj = {
   age: 22,
-  alert: alert,
+  alert: alertAge,
 };
 
 const myObj2 = {
@@ -41,18 +44,18 @@ const myObj2 = {
   alert: alert,
   nestedObj: {
     age: 26,
-    alert: alert,
+    alert: alertAge,
   },
 };
 
-myObj.nestedObj.alert(); // 26 years old
+myObj2.nestedObj.alert(); // 26 years old
 myObj.alert(); // 22 years old
 
 /*To explicitly bind a function call to a context,
  you simply have to invoke the call() on
  that function and pass in the context object as parameter: */
 
-function alert() {
+function alertCall() {
   console.log(this.age + " years old");
 }
 
@@ -60,7 +63,7 @@ const myObj3 = {
   age: 22,
 };
 
-alert.call(myObj3); // 22 years old
+alertCall.call(myObj3); // 22 years old
 
 /* Now here's the fun part. Even if you were to pass around that 
 function multiple times to new variables (currying), every invocation

@@ -1,7 +1,7 @@
 /* ES6 introduced Set and WeakSet.
    Similar to arrays that allows us to store multiple items
    like numbers , strings , objects etc. However, unlike 
-   array, a set cannot contain dupilcate values.
+   array, a set cannot contain duplicate values.
    - created using new Set()
 */
 

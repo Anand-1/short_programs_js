@@ -1,7 +1,7 @@
 /* 
 Promise 
 It is an object that may produce a single value some time in 
-the future with either a resolvled value or a reason of not being resolved .
+the future with either a resolved value or a reason of not being resolved .
 */
 console.log("start callbacks");
 

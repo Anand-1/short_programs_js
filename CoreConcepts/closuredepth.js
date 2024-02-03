@@ -1,3 +1,8 @@
+/*
+Closures are functions that have access to the variables that are present in 
+thier scope chain even if the outer function ceases to exist. 
+ */
+
 let buttonProps = (borderRadius) => {
   const createVariants = (variant, color) => {
     const newProps = {

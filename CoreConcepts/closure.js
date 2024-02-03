@@ -31,7 +31,7 @@ init();
 function myName() {
   var num = 1;
   function printMyName() {
-    console.log(num);
+    console.log("The value is " + num);
   }
   num = 100;
   return printMyName;
@@ -52,4 +52,5 @@ function numberGenerator() {
 }
 
 var numbera = numberGenerator();
+numbera();
 numbera(); // 2
