@@ -38,26 +38,24 @@ function duplicateLetterCheck(o) {
 // duplicateLetterCheck("Caca");
 
 function printDups(str) {
-  let charCount = {};
+  let charCountObj = {};
 
   for (let i = 0; i < str.length; i++) {
     let character = str[i];
-    console.log(character);
-    charCount[character] = (charCount[character] || 0) + 1;
-    console.log(charCount[character]);
+    charCountObj[character] = (charCountObj[character] || 0) + 1;
+    console.log(character, charCountObj[character]);
   }
-  console.log(charCount);
-
-  for (let char in charCount) {
-    if (charCount[char] > 1) {
-      console.log(char + ", count = " + charCount[char]);
+  console.log(charCountObj);
+  for (let char in charCountObj) {
+    if (charCountObj[char] > 1) {
+      console.log(char + ", count = " + charCountObj[char]);
     }
   }
 }
 
-let str = "caca";
+let str = "cacad";
 
-// printDups(str);
+printDups(str);
 
 function printDuplicates(str) {
   let len = str.length;
@@ -86,7 +84,7 @@ function printDuplicates(str) {
 
 // JavaScript program to count all duplicates
 // from string using maps
-function printDups(str) {
+function printDupsi(str) {
   let count = new Map();
   for (let i = 0; i < str.length; i++) {
     if (count.has(str[i])) {
@@ -105,4 +103,4 @@ function printDups(str) {
   }
 }
 
-// printDups(str);
+// printDupsi(str);

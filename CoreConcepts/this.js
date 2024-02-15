@@ -16,7 +16,7 @@ https://www.freecodecamp.org/news/what-is-this-in-javascript/
 const name = "Anand";
 function firstalert() {
   // "use strict";
-  console.log(this.name + " is calling");
+  console.log(name + " is calling");
 }
 
 firstalert();
