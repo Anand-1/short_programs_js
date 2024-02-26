@@ -10,4 +10,3 @@ const createUser = (firstname, lastname) => {
 };
 
 const user = createUser("Anand", "Raj");
-console.log(user);

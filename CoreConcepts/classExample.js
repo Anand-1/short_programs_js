@@ -2,7 +2,7 @@
 const y = class {};
 console.log(Object.getPrototypeOf(y));
 console.log("////////////////////////////////////////////////");
-class IB {
+class Anand {
   name;
   constructor(message) {
     this.name = message;
@@ -45,4 +45,4 @@ anandForm.fillForm();
 anandForm.submit();
 anandForm.cancel();
 
-let msg = new IB("IB");
+let msg = new Anand("Anand");

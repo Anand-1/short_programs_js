@@ -8,19 +8,17 @@ function multiply(data) {
   }
 }
 
-console.log(multiply(data));
+// console.log(multiply(data));
 
 // Factorial example
-console.log("Factorial Example !");
 let n = 5;
 function factorial(n) {
   if (n == 1 || n == 0) return 1;
   else return n * factorial(n - 1);
 }
-console.log(factorial(n));
+// console.log(factorial(n));
 
 //  Range of Numbers
-console.log("Range of Numbers Problem !");
 function rangeOfNumbers(startNum, endNum) {
   if (endNum < startNum) return [];
   else {
@@ -29,7 +27,7 @@ function rangeOfNumbers(startNum, endNum) {
     return numbers;
   }
 }
-console.log(rangeOfNumbers(0, 5));
+// console.log(rangeOfNumbers(0, 5));
 // rangeOfNumbers(1,5) =>[1,2,3,4,5]
 // rangeOfNumbers(1,4) =>[1,2,3,4]
 // rangeOfNumbers(1,3) =>[1,2,3]
