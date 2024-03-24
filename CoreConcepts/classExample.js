@@ -1,16 +1,4 @@
 //class implementation
-const y = class {};
-console.log(Object.getPrototypeOf(y));
-console.log("////////////////////////////////////////////////");
-class Anand {
-  name;
-  constructor(message) {
-    this.name = message;
-  }
-  greet() {
-    return "Hello, " + this.name + "How are you";
-  }
-}
 class RailwayForm {
   constructor(givenName) {
     console.log("Constructor Called !");
@@ -44,5 +32,3 @@ onlineForm.cancel();
 anandForm.fillForm();
 anandForm.submit();
 anandForm.cancel();
-
-let msg = new Anand("Anand");

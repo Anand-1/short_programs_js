@@ -14,27 +14,6 @@ function findDupElementNumber(dataArray) {
 
 console.log(findDupElementNumber(dataArray));
 
-// Not using objects and not counting anything but letters.
-function duplicateLetterCheck(o) {
-  var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var arr = o.toUpperCase().split("");
-  var count = [];
-  for (var v in arr) {
-    pos = letters.indexOf(arr[v]);
-    if (pos < 0) continue; // It wasn't a letter.
-    count[pos] = count[pos] || 0;
-    console.log(count[pos]);
-    count[pos]++;
-  }
-
-  for (var v in count) {
-    if (!(count[v] > 0)) continue; // The letter never appeared.
-    console.log(
-      o + ", the letter '" + letters[v] + "' => " + count[v] + " times."
-    );
-  }
-}
-
 // duplicateLetterCheck("Caca");
 
 function printDups(str) {

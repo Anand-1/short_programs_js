@@ -4,10 +4,16 @@ itself.
  153 = 1*1*1 + 5*5*5 + 3*3*3
 */
 
-let data = 1634;
-function chechArmstrong(...arra) {
-  let data = arra.toString();
-  console.log(data.length, data);
+let data = 153;
+function chechArmstrong(data) {
+  let localData = data;
+  data = data.toString().split("");
+  console.log(data);
+  let tempData = 0;
+  for (let i = 0; i < data.length; i++) {
+    tempData += Math.pow(data[i], data.length);
+  }
+  if (localData == tempData) return true;
   return false;
 }
 
