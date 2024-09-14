@@ -1,14 +1,14 @@
 function anand() {
-  console.log(rahul() + " response of rahul");
+  console.log(rahul() + " It will call rahul");
   return true;
 }
 function rahul() {
-  console.log(shekhar() + " response of shekhar");
+  console.log(shekhar() + " It will call shekhar");
   return true;
 }
 
 function shekhar() {
-  console.log(ajay() + " response of ajay");
+  console.log(ajay() + " It will call ajay");
   return true;
 }
 
@@ -17,4 +17,4 @@ function ajay() {
   return true;
 }
 
-console.log(anand() + " response of anand");
+console.log(anand() + " I will call Anand");
