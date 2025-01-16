@@ -8,7 +8,6 @@ let data = 153;
 function chechArmstrong(data) {
   let localData = data;
   data = data.toString().split("");
-  console.log(data);
   let tempData = 0;
   for (let i = 0; i < data.length; i++) {
     tempData += Math.pow(data[i], data.length);
@@ -17,4 +16,16 @@ function chechArmstrong(data) {
   return false;
 }
 
-console.log(chechArmstrong(data));
+console.log("Using for Loop => " + chechArmstrong(153));
+
+const checkArmStrongNumber = (data) => {
+  let arr = data.toString().split("");
+  let len = arr.length;
+  let mappedData = arr
+    .map((x) => Math.pow(x, len))
+    .reduce((acc, iter) => acc + iter);
+  if (mappedData === data) return true;
+  return false;
+};
+
+console.log("Using map => " + checkArmStrongNumber(1634));

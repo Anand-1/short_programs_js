@@ -1,5 +1,7 @@
 //throttle example
-
+/* Throttling is a technique used to limit the rate at which a function is called.
+It means transforminga function such that it can be called only once in a specific 
+interval of time . */
 function throttle(enable, delay) {
   return function (...args) {
     disableButton();

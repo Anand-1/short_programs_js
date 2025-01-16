@@ -1,4 +1,5 @@
-/* 'this' automatically resolves to an object or scope 
+/* 
+'this' automatically resolves to an object or scope 
 depending on the context at which is was defined. 
 There are generally four kinds of bindings:
 - Default Binding
