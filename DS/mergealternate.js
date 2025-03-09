@@ -4,21 +4,23 @@ const arr1 = [1, 2, 3, 4, 5];
 
 const arr2 = [6, 7, 8, 9, 10];
 
-const mergeAlernatively = (arr1, arr2) => {
-  const res = [];
-  let j = 0;
-  let k = 0;
-  for (let i = 0; i < arr1.length + arr2.length; i++) {
-    if (i % 2 == 0) {
-      res.push(arr1[j]);
-      j++;
+function mergeSortedArrays(arr1, arr2) {
+  const merged = [];
+  let i = 0,
+    j = 0;
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      merged.push(arr1[i]);
+      i++;
     } else {
-      res.push(arr2[k]);
-      k++;
+      merged.push(arr2[j]);
+      j++;
     }
   }
-  console.log(res);
-  return res;
-};
+  console.log(i, j, merged);
+  console.log(arr1.slice(i));
+  console.log(arr2.slice(j));
+  return merged.concat(arr1.slice(i)).concat(arr2.slice(j));
+}
 
-mergeAlernatively(arr1, arr2);
+console.log(mergeSortedArrays(arr1, arr2));

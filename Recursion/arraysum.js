@@ -1,5 +1,5 @@
 function arraysum(arr, len) {
-  if (len <= 0) return 0;
+  if (len <= 0) return 0; // base case
   else {
     return arr[len - 1] + arraysum(arr, len - 1);
   }

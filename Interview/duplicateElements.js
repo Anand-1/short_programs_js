@@ -1,7 +1,6 @@
 var dataArray = [-1, -3, 1, 3, 6, 999, 999];
 /*
-The indexOf() method returns the position of the first 
-occurrence of a value in a string. 
+The indexOf() method returns the position of the first occurrence of a value in a string. 
 The indexOf() method returns -1 if the value is not found.
 */
 function findDupElementNumber(dataArray) {
@@ -11,14 +10,11 @@ function findDupElementNumber(dataArray) {
     return sortArr.indexOf(currentValue) != currentIndex;
   });
 }
-
 console.log(findDupElementNumber(dataArray));
 
 // duplicateLetterCheck("Caca");
-
 function printDups(str) {
   let charCountObj = {};
-
   for (let i = 0; i < str.length; i++) {
     let character = str[i];
     charCountObj[character] = (charCountObj[character] || 0) + 1;
@@ -33,7 +29,6 @@ function printDups(str) {
 }
 
 let str = "cacad";
-
 printDups(str);
 
 function printDuplicates(str) {

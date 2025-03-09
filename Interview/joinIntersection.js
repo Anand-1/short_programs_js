@@ -8,6 +8,13 @@ const joinOp = (arr1, arr2) => {
   return newArr;
 };
 
+var a = [1, 2, 3],
+  b = [101, 2, 1, 10];
+var c = a.concat(b);
+var d = c.filter((item, pos) => c.indexOf(item) === pos);
+
+console.log(d); // d is [1, 2, 3, 101, 10]
+
 const intersectioOp = (arr1, arr2) => {
   let returnArr = [];
   for (let i = 0; i < arr1.length; i++) {
@@ -20,3 +27,5 @@ const intersectioOp = (arr1, arr2) => {
 
 console.log(joinOp(arr1, arr2));
 console.log(intersectioOp(arr1, arr2));
+const filteredArray = arr1.filter((value) => arr2.includes(value));
+console.log(filteredArray);

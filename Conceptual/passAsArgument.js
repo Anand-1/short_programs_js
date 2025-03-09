@@ -9,7 +9,6 @@ function filterArr(arr, callback) {
 function isOdd(x) {
   return x % 2 != 0;
 }
-
 function isEven(x) {
   return x % 2 === 0;
 }

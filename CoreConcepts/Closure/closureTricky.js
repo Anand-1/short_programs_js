@@ -29,25 +29,20 @@ function createIncrement() {
     count++;
   }
   let message = `Count is ${count}`;
+  console.log(message);
   function logMessage() {
-    //  let message = `Count is ${count}`; change
+    let message = `Count is ${count}`;
     console.log(message);
   }
 
   return [increment, logMessage];
 }
 
-const [increment, log] = createIncrement();
-
-increment();
-log();
-increment();
-log();
-
-//=================================================
-function a() {
-  console.log(b);
-}
-
-var b = 10;
-a();
+const [incrementMessage, log] = createIncrement();
+//0
+incrementMessage();
+log(); //1
+incrementMessage();
+log(); //2
+incrementMessage();
+log(); //3
