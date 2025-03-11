@@ -41,8 +41,10 @@ class TaskScheduler {
     });
   }
 }
+
 const scheduler = new TaskScheduler(2);
 scheduler.addtask(
+  // This is the task , which resolves to task 1, after 5s
   () => new Promise((res) => setTimeout(() => res("Task 1"), 5 * 1000))
 );
 scheduler.addtask(
