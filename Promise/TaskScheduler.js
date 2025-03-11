@@ -19,9 +19,10 @@ class TaskScheduler {
       //
       async function __taskRunner() {
         this.runningTasks += 1;
+
         try {
           const result = await task();
-          console.log(`Result`, result);
+          console.log(`Running `, result);
           resolve(result);
         } catch (err) {
           console.log(`Task failed`, err);
@@ -56,3 +57,4 @@ scheduler.addtask(
 scheduler.addtask(
   () => new Promise((res) => setTimeout(() => res("Task 5"), 5 * 1000))
 );
+//https://www.youtube.com/watch?v=-ZnBEWFkDOk&list=PLlg0mLRU4WvnB1IkBZiwg70btOTH5Y22t&index=10
