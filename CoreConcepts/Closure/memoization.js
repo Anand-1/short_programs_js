@@ -8,14 +8,14 @@ function add(x) {
 
 const memo = (func) => {
   let cache = {};
-  return function (x) {
-    if (cache[x]) {
+  return function (value) {
+    if (cache[value]) {
       console.log("Return the value from Cache!");
-      return cache[x];
+      return cache[value];
     } else {
       console.log("New Calculation !");
-      const result = func(x);
-      cache[x] = result;
+      const result = func(value);
+      cache[value] = result;
       return result;
     }
   };

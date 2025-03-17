@@ -3,8 +3,11 @@ console.log("Task Scheduler Loaded !");
 
 class TaskScheduler {
   constructor(concurreny) {
+    //how many can run concurrently
     this.concurreny = Number(concurreny);
+    // How many are running noow
     this.runningTasks = 0;
+    // Tasks in waiting quue
     this.__waitingQueue = [];
   }
 
@@ -14,6 +17,7 @@ class TaskScheduler {
       this.nextTask();
     }
   }
+  // Tasks are getting added
   addtask(task) {
     return new Promise((resolve, reject) => {
       //
@@ -43,6 +47,7 @@ class TaskScheduler {
 }
 
 const scheduler = new TaskScheduler(2);
+// New Scheduler added
 scheduler.addtask(
   // This is the task , which resolves to task 1, after 5s
   () => new Promise((res) => setTimeout(() => res("Task 1"), 5 * 1000))

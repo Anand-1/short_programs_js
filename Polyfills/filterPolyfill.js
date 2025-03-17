@@ -1,6 +1,8 @@
-Array.prototype.myFilter = function (callback, context) {
-  var arr = [];
+// Filter is higher order function that returns fitered values as per condition
 
+Array.prototype.myFilter = function (callback, context) {
+  // There needs to be a return array, so initilize
+  var arr = [];
   for (i = 0; i < this.length; i++) {
     if (callback.call(context, this[i], i, this)) {
       arr.push(this[i]);

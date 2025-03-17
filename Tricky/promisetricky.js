@@ -15,12 +15,12 @@ setTimeout(() => {
 }, 1000);
 console.log(5);
 /////////////////////
-// let c = 0;
+let c = 0;
 
-// let id = setInterval(function () {
-//   c = c > 10 ? c + "1" : ++c;
+let id = setInterval(function () {
+  c = c > 10 ? c + "1" : ++c;
 
-//   console.log("Hello");
+  console.log("Hello");
 
-//   if (c >= 100) clearInterval(id);
-// });
+  if (c >= 100) clearInterval(id);
+});
