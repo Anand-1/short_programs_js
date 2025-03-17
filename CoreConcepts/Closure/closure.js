@@ -13,6 +13,7 @@ console.log("Closure Loaded");
   - setTimeout
   - maintain the scope
 */
+
 // Example 1:
 function init() {
   var name = "Mozilla";

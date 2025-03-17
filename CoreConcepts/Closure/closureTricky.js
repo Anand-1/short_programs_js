@@ -1,6 +1,7 @@
 (function immediateA(a) {
   return (function immediateB(b) {
     console.log(a); // What is logged?
+    console.log(b); // What is logged?
   })(1);
 })(0);
 
@@ -16,9 +17,9 @@ let count = 0;
 (function immediate() {
   if (count === 0) {
     let count = 1;
-    console.log(count + "  Inside"); // What is logged?
+    console.log(count + "  Inside"); // What is logged? 1
   }
-  console.log(count + " Outside"); // What is logged?
+  console.log(count + " Outside"); // What is logged? 0
 })();
 
 //--------------------------------------------------------
