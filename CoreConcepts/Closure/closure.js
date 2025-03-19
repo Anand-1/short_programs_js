@@ -1,4 +1,5 @@
 console.log("Closure Loaded");
+//A closure is when a function remembers variables from its parent scope even after the parent has finished execution.
 //Function bundled together with its lexical scope is called closure
 /* Lexical scoping: 
    A lexical scope in JavaScript means that a variable defined outside 

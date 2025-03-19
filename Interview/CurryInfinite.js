@@ -11,3 +11,5 @@ function curry(fn) {
 const sum = (a, b, c) => a + b + c;
 const curriedSum = curry(sum);
 console.log(curriedSum(1)(2)(3)); // Output: 6
+
+//https://www.youtube.com/watch?v=k5TC9i5HonI
