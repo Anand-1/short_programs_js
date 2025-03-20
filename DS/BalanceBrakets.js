@@ -6,8 +6,11 @@ function isValidParentheses(data) {
     console.log(char in pairs);
     if (char in pairs) {
       stack.push(char);
+      console.log("Pushed to stack !");
     } else {
+      console.log();
       if (pairs[stack.pop()] !== char) {
+        console.log("pop done !");
         return false;
       }
     }
