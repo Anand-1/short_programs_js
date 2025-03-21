@@ -28,6 +28,7 @@ function reverseVowel(str1) {
       vowel += str[i];
     }
   }
+  console.log(vowel);
 
   // Placing the vowels in the reverse
   // order in the string
