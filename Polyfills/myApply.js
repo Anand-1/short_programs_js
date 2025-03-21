@@ -1,12 +1,11 @@
-Object.prototype.myBind = function (bindObj, ...params) {
+Object.prototype.myApply = function (applyObj, params) {
   if (typeof this !== "function") {
     throw new Error(this + " is not a Function");
   }
-  const self = this;
-
-  return function (...args) {
-    return self.apply(bindObj, [...params, ...args]);
-  };
+  applyObj.tempFunction = this;
+  const result = applyObj.tempFunction(...params);
+  delete applyObj.tempFunction;
+  return result;
 };
 
 let object1 = {
@@ -22,5 +21,4 @@ let object2 = {
   surname: "Patel",
 };
 
-let boundFunction = object1.printName.myBind(object2, 22, "Morbi");
-console.log(boundFunction()); // Amy Patel 22 Morbi
+console.log(object1.printName.myApply(object2, [22, "morbi"]));
