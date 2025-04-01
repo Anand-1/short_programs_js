@@ -1,20 +1,11 @@
-function createCounter() {
-  let count = 0;
-  return {
-    increment() {
-      count++;
-      console.log(count);
-    },
-    reset() {
-      count = 0;
-      console.log("Counter reset");
-    },
-  };
+console.log("My Watch");
+function timer() {
+  let i = 0;
+  const timer = setInterval(() => {
+    console.log("Time is" + i++);
+    if (i > 10) {
+      clearInterval(timer);
+    }
+  }, 1000);
 }
-
-const counter1 = createCounter();
-const counter2 = createCounter();
-
-counter2.increment(); // Output?
-counter1.reset(); // Output?
-counter2.increment(); // Out
+timer();

@@ -1,13 +1,8 @@
-/* Hi user, never forget the benefits of map, filter and reduce
-   what are they? they are essentially higher order function 
-   that provide callback on each element of an array
-   Benefits : 
+/* Benefits : 
    - Easy to comprehend 
    - Less prone to sideeffects as these functions don't modify
      array ,and intead create a new one.
    - Avoid explicit loops 
-   
-   Note: Array.map() , remember this
 */
 
 let studentRecords = [
