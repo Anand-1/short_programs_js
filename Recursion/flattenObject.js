@@ -79,3 +79,24 @@ var object = { 0: [1, 2, 3, 4] },
   }, []);
 
 // console.log(result);
+
+// initialize the parent as empty
+function flatObj(obj, parent = '') {
+  const finalObj = {};
+  const genrateFlats = (obj, parent) => {
+    for (let key in obj) {
+      // Create new Parent , by appending last parent with key, first time
+      const newParent = parent + key;
+      if (typeof obj[key] === 'object') {
+        // now new parent is appended with '.'
+        genrateFlats(obj[key], newParent + '.')
+      } else {
+        // It reaches a point where there are no more objects
+        finalObj[newParent] = obj[key];
+      }
+    }
+  }
+  genrateFlats(obj, parent)
+  return finalObj;
+}
+console.log(flatObj(obj))

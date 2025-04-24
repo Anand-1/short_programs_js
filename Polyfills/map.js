@@ -10,10 +10,10 @@ const arr1 = [1, 2, 3].myMap();
 
 console.log(arr1);
 
-Array.prototype.myMap = function (callback, context) {
+Array.prototype.myMap = function (callback) {
   let arr = [];
   for (let i = 0; i < this.length; i++) {
-    arr.push(callback.call(context, this[i], i, this));
+    arr.push(callback.call(this[i], i, this));
   }
   return arr;
 };

@@ -3,8 +3,7 @@
 depending on the context at which is was defined. 
 There are generally four kinds of bindings:
 - Default Binding
-- Implicit Binding
-- Explicit Binding
+- Implicit Binding;
 - Constructor Call Binding
 */
 

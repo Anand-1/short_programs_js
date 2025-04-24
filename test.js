@@ -1,11 +1,15 @@
-console.log("My Watch");
-function timer() {
-  let i = 0;
-  const timer = setInterval(() => {
-    console.log("Time is" + i++);
-    if (i > 10) {
-      clearInterval(timer);
+let data = 'ADASDAD'
+let temp = [];
+let characher = '';
+for (let i = 0; i < data.length; i++) {
+    let characher = data[i]
+    for (let j = 0; j < data.length; j++) {
+        if (characher === data[j]) {
+            console.log(j, data[j])
+            break;
+        } else {
+
+        }
     }
-  }, 1000);
+    console.log('Iteration' + i)
 }
-timer();

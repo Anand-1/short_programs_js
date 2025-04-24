@@ -1,3 +1,4 @@
+// 1st Promise
 const p1 = new Promise(function (resolve, reject) {
   setTimeout(() => {
     resolve("resolved 1");
