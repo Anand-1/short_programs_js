@@ -23,4 +23,18 @@ function mergeSortedArrays(arr1, arr2) {
   return merged.concat(arr1.slice(i)).concat(arr2.slice(j));
 }
 
+
+function mergeSortedArrays(arr1, arr2) {
+  let final = [];
+  let index = 0;
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr2[i]) {
+      final.push(arr1[i], arr2[i])
+      index++;
+    }
+  }
+  final = final.concat(arr1.slice(index, arr1.length)).concat(arr2.slice(index, arr2.length))
+  return final;
+}
+
 console.log(mergeSortedArrays(arr1, arr2));

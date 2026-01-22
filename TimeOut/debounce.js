@@ -32,3 +32,6 @@ const result = hofdebounce(calldebounce, 1000);
 
 const getElemetFunction = document.getElementById("debounce");
 getElemetFunction.addEventListener("keyup", (e) => result(e.target.value));
+
+
+//card encryption 

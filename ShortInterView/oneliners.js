@@ -115,3 +115,19 @@ const rotateArray = (arr, positions) =>
 const arr = [1, 2, 3, 4, 5];
 const pos = 2;
 const result3 = rotateArray(arr, pos);
+
+
+// first letter capitalize
+const data = 'i am anand raj singh'
+
+function capitalize(data) {
+  data = data.split(' ').map((item) => item.split(''))
+  for (let item of data) {
+    item[0] = item[0].toUpperCase();
+  }
+  data = data.map((item) => item.join(''))
+  data = data.join(' ')
+  console.log(data)
+}
+
+console.log(capitalize(data))
