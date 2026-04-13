@@ -1,102 +1,102 @@
-/* 
-'this' automatically resolves to an object or scope 
-depending on the context at which is was defined. 
-There are generally four kinds of bindings:
-- Default Binding
-- Implicit Binding;
-- Constructor Call Binding
+/*
+  'this' binding in JavaScript depends on how a function is called.
+  There are four common binding rules:
+  - Default binding
+  - Implicit binding
+  - Explicit binding (call/apply/bind)
+  - Constructor binding (new)
 */
 
-/* As you can see, name() is a standalone, unattached function,
- so it is bound to the global scope. As a result, the this.name reference 
-resolves to the global variable const name = 'Kingsley'.
-When set in strict mode, the this reference is set to undefined.
-https://www.freecodecamp.org/news/what-is-this-in-javascript/
- */
-const name = "Anand";
-function firstalert() {
-  // "use strict";
-  console.log(name + " is calling");
+// -----------------------------------------------------------------------------
+// Default Binding
+// -----------------------------------------------------------------------------
+// When a function is called without any object reference, it uses default binding.
+// In non-strict mode, the default object is the global object (window in browser,
+// global in Node). In strict mode, `this` is undefined.
+
+globalThis.name = "Anand";
+function standaloneFunction() {
+  console.log("Default binding example:");
+  console.log("  this === globalThis?", this === globalThis);
+  console.log("  name from this:", this.name);
 }
 
-firstalert();
+standaloneFunction();
 
-/* 
-Implicit Binding: 
-According to the binding rule in JavaScript, a function can use 
-an object as its context only if that object is bound to it at the 
-call site. This form of binding is known as implicit binding.
-Put simply, when you call a function using dot notation, this is implicitly 
-bound to the object the function is being called from.
-*/
+// -----------------------------------------------------------------------------
+// Implicit Binding
+// -----------------------------------------------------------------------------
+// When a function is called as a property of an object, `this` is bound to that object.
 
-function alertAge() {
-  console.log(this.age + " years old");
+function showAge() {
+  console.log(`${this.age} years old`);
 }
 
-const myObj = {
+const person = {
   age: 22,
-  alert: alertAge,
+  showAge,
 };
 
-const myObj2 = {
-  age: 22,
-  alert: alert,
-  nestedObj: {
+const company = {
+  age: 42,
+  teamMember: {
     age: 26,
-    alert: alertAge,
+    showAge,
   },
 };
 
-myObj2.nestedObj.alert(); // 26 years old
-myObj.alert(); // 22 years old
+person.showAge(); // 22 years old
+company.teamMember.showAge(); // 26 years old
 
-/*To explicitly bind a function call to a context,
- you simply have to invoke the call() on
- that function and pass in the context object as parameter: */
+// -----------------------------------------------------------------------------
+// Explicit Binding
+// -----------------------------------------------------------------------------
+// call() and apply() let you explicitly set the `this` value for a function call.
 
-function alertCall() {
-  console.log(this.age + " years old");
+function showAgeExplicit() {
+  console.log(`${this.age} years old`);
 }
 
-const myObj3 = {
-  age: 22,
+const customer = {
+  age: 30,
 };
 
-alertCall.call(myObj3); // 22 years old
+showAgeExplicit.call(customer); // 30 years old
 
-/* Now here's the fun part. Even if you were to pass around that 
-function multiple times to new variables (currying), every invocation
- will use the same context because it has been locked 
-(explicitly bound) to that object. This is called hard binding. */
+// bind() returns a new function with `this` permanently set to the given object.
+const boundShowAge = showAgeExplicit.bind(customer);
+boundShowAge(); // 30 years old
+boundShowAge.call({ age: 99 }); // still 30 years old
 
-function alert() {
+// -----------------------------------------------------------------------------
+// Hard Binding
+// -----------------------------------------------------------------------------
+// A wrapper function can lock `this` so it cannot be overridden later.
+
+function showAgeHard() {
   console.log(this.age);
 }
 
-const myObj4 = {
+const hardPerson = {
   age: 22,
 };
 
-const bar = function () {
-  alert.call(myObj);
+const hardBound = function () {
+  showAgeHard.call(hardPerson);
 };
 
-bar(); // 22
-setTimeout(bar, 100); // 22
-// a hard-bound `bar` can no longer have its `this` context overridden
-bar.call(window); // still 22
+hardBound(); // 22
+setTimeout(hardBound, 100); // 22
+hardBound.call({ age: 99 }); // still 22
 
-/*When a function is invoked with the new keyword in front of it, 
-otherwise known as a constructor call, the following things occur:
+// -----------------------------------------------------------------------------
+// Constructor Binding
+// -----------------------------------------------------------------------------
+// When a function is called with `new`, a fresh object is created and bound to `this`.
 
-A brand new object is created (or constructed)
-The newly constructed object is [[Prototype]]-linked to the function that constructed it
-The newly constructed object is set as the this binding for that function call. */
-
-function giveAge(age) {
+function PersonWithAge(age) {
   this.age = age;
 }
 
-const bar2 = new giveAge(22);
-console.log(bar2.age); // 22
+const instance = new PersonWithAge(22);
+console.log("Constructor binding example:", instance.age); // 22
