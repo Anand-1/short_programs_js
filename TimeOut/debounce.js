@@ -1,37 +1,51 @@
 /*
-Debouncing is a way of delaying the execution of a function until a certain amount
-of time has passed since the last time it was called. This can be useful for scenarios
-where we want to avoid unnecessary or 
-repeated function calls that might be expensive or time-consuming.
+Debouncing is a technique to delay the execution of a function until a certain amount
+of time has passed since the last time it was called. This is useful for scenarios
+where we want to avoid unnecessary or repeated function calls that might be expensive
+or time-consuming, such as API calls on user input.
 */
 
-//debounce example
-// Once we pause , action will be performed
-var count = 0;
-var calldebounce = (data) => {
+// Debounce Example
+// The action is performed only after the user pauses typing for the specified delay.
+
+let count = 0;
+
+/**
+ * Function to be debounced - logs the input data and increments a counter.
+ * @param {string} data - The input value from the event.
+ */
+const callDebounce = (data) => {
   console.log(data);
-  console.log("Key up  " + count++);
+  console.log("Key up event count: " + count++);
 };
 
-function hofdebounce(call, delay) {
-  // local timer initialization, with closure
+/**
+ * Higher-order function that creates a debounced version of the provided function.
+ * @param {Function} func - The function to debounce.
+ * @param {number} delay - The delay in milliseconds.
+ * @returns {Function} - The debounced function.
+ */
+function debounce(func, delay) {
+  // Timer variable scoped to the closure
   let timer;
 
-  return function (...arg) {
-    // reset action , if next action is performed
+  return function (...args) {
+    // Clear the previous timer if a new call is made
     clearTimeout(timer);
-    //timer given value
+    // Set a new timer to execute the function after the delay
     timer = setTimeout(() => {
-      call(arg);
+      func(...args);
     }, delay);
   };
 }
 
-// Action performeed after some time
-const result = hofdebounce(calldebounce, 1000);
+// Create a debounced version of callDebounce with a 1000ms delay
+const debouncedResult = debounce(callDebounce, 1000);
 
-const getElemetFunction = document.getElementById("debounce");
-getElemetFunction.addEventListener("keyup", (e) => result(e.target.value));
-
-
-//card encryption 
+// Assuming there's an HTML input element with id "debounce"
+const inputElement = document.getElementById("debounce");
+if (inputElement) {
+  inputElement.addEventListener("keyup", (e) => debouncedResult(e.target.value));
+} else {
+  console.warn("Element with id 'debounce' not found.");
+} 
