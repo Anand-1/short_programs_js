@@ -1,22 +1,28 @@
+// Check whether a string contains balanced parentheses/brackets/braces.
+// Supports (), {}, and [] pairs.
 function isValidParentheses(data) {
+  // Use a stack to keep opening brackets until a matching closing bracket is found.
   const stack = [];
+
+  // Map each opening bracket to its corresponding closing bracket.
   const pairs = { "(": ")", "{": "}", "[": "]" };
+
   for (const char of data) {
-    console.log(char);
-    console.log(char in pairs);
+    // If the character is an opening bracket, push it onto the stack.
     if (char in pairs) {
       stack.push(char);
-      console.log("Pushed to stack !");
     } else {
-      console.log();
+      // For a closing bracket, pop the last opening bracket from the stack
+      // and verify that it matches the current closing bracket.
       if (pairs[stack.pop()] !== char) {
-        console.log("pop done !");
         return false;
       }
     }
-    console.log(stack);
   }
+
+  // If any opening brackets remain unmatched, the string is invalid.
   return stack.length === 0;
 }
 
+// Example usage.
 console.log(isValidParentheses("{[()]}")); // Output: true
