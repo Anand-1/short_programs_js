@@ -13,7 +13,7 @@ function buysellstocks(data) {
     }
     return ['Buy on ' + buy + ' and sell on and  ' + sell, 'make profit of ' + max]
 }
-
+// revisit
 function maxProfit(prices) {
     let maxProfit = 0;
     let minPrice = prices[0];
