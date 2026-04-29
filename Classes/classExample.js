@@ -1,4 +1,4 @@
-//class implementation
+//Class is a template for creating objects. It encapsulates data and functions that operate on that data. In JavaScript, classes were introduced in ES6 as syntactical sugar over the existing prototype-based inheritance. They provide a more familiar and cleaner syntax for creating objects and handling inheritance.  
 class RailwayForm {
   constructor(givenName) {
     console.log("Constructor Called !");
