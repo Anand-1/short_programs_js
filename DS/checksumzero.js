@@ -60,6 +60,5 @@ const twoSum = (array, goal) => {
       twoIndexes.push(mapOfNumbers[target]);
     }
   }
-
   return twoIndexes;
 }

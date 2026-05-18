@@ -20,7 +20,6 @@ function isValidParentheses(data) {
       }
     }
   }
-
   // If any opening brackets remain unmatched, the string is invalid.
   return stack.length === 0;
 }

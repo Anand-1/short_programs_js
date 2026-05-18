@@ -14,7 +14,12 @@ function threeSum(nums, target) {
     return result;
 }
 
-//revisit
+/*
+3. Two Pointer Technique
+Another approach is to use the two pointer technique. The idea is to sort the array first, 
+and then use two pointers, one starting from the beginning and one from the end, to find the triplets that 
+add up to the target value. 
+This approach has a time complexity of O(n²) and doesn’t take up extra space. */
 //three sum problem
 function threeSum(nums) {
   const result = [];

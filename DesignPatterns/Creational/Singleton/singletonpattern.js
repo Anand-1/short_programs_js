@@ -2,7 +2,7 @@
  classes to one single instance. This single instance is unmodifiable,
  and can be accessed globally throughout the application. */
 
-let instance;
+let instance; 
 
 // 1. Creating the `Counter` class, which contains a `constructor`, `getInstance`, `getCount`, `increment` and `decrement` method.
 // Within the constructor, we check to make sure the class hasn't already been instantiated.
