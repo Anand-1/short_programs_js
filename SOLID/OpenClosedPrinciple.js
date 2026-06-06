@@ -32,3 +32,4 @@ function main(){
     processPayment(CreditCardPaymentProcessor, 100)
     processPayment(paypalProcessor, 200)
 }
+main();

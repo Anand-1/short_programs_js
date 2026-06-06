@@ -4,7 +4,7 @@
   - Default binding
   - Implicit binding
   - Explicit binding (call/apply/bind)
-  - Constructor binding (new)
+  - Constructor binding (new)  
 */
 
 // -----------------------------------------------------------------------------

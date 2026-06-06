@@ -1,4 +1,5 @@
-/* This principle applies to interface and is similar to the Single Responsibility Priciple , focusing
+/* Interface Segregation Principle
+This principle applies to interface and is similar to the Single Responsibility Principle , focusing
 on keeping interfaces specified and well defined .
 
 Examples: Suppose if you enter a restuarent and you are vegetarian . The waiter in that restuarent 
