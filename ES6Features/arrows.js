@@ -14,7 +14,6 @@
 const add = (x, y) => x + y;
 
 //2
-
 function Person() {
   this.age = 0;
   setInterval(function growUp() {

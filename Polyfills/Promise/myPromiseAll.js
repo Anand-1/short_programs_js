@@ -42,6 +42,26 @@ Promise.myAll = function (promises) {
   });
 };
 
+
+Promise.allSettled = function (promises) {
+  let mappedPromises = promises.map((p) => {
+    return p
+      .then((value) => {
+        return {
+          status: 'fulfilled',
+          value,
+        };
+      })
+      .catch((reason) => {
+        return {
+          status: 'rejected',
+          reason,
+        };
+      });
+  });
+  return Promise.all(mappedPromises);
+};
+
 Promise.myAll([p1, p2, p3])
   .then((res) => {
     console.log(res);

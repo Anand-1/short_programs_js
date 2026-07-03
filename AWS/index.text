@@ -1,0 +1,19 @@
+AWS 
+
+There are four pillars to it :
+1. Compute 
+2. Storage 
+3. Network 
+4. Security
+
+- Recall method
+-- CSNS 
+-- Usage priority for a service you use 
+-- It's the root structure upon which this service operates 
+
+
+React Pillars 
+
+1. Component is reusable  building 'block' for react app.
+2. Props is 'mechanism' to send data from parent to child component .(immutable , read-only)
+3. State is internal data storage of component.(mutable)
