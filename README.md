@@ -1,2 +1,2 @@
 # short_programs_js
-This includes short javascript programs to practise 
+This includes short javascript programs to practise for interview 
