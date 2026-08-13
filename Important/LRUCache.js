@@ -48,3 +48,15 @@ lru.put(4, 4);
 console.log(lru.get(1)); 
 console.log(lru.get(3)); 
 console.log(lru.get(4));
+
+// Function to display the current state of the cache
+lru.displayCache = function() {
+    console.log("Current cache state:");
+    for (let key of this.order) {
+        console.log(`Key: ${key}, Value: ${this.cache.get(key)}`);
+    }
+};
+
+// Display the current state of the cache
+lru.displayCache();
+
