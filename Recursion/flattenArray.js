@@ -1,3 +1,4 @@
+//recursion
 //flattening nested array
 
 let ary = [1, 2, 3, [4, [5, 5], [4], 9], [10]];

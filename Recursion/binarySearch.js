@@ -1,3 +1,4 @@
+//recursion
 function binarySearch(arr, target, start, end) {
   // Base case: if start is greater than end, element not found
   if (start > end) {

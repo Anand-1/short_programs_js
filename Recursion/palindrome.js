@@ -1,3 +1,4 @@
+//recursion
 function isPalindrome(string) {
   let left = 0;
   let right = string.length - 1;

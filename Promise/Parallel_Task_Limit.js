@@ -1,3 +1,4 @@
+//recursion
 const tasks = [
   () => new Promise((resolve) => setTimeout(() => resolve(1), 1000)),
   () => new Promise((resolve) => setTimeout(() => resolve(2), 1000)),
